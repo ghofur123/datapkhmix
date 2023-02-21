@@ -25,11 +25,10 @@ class DataKpmImport implements ToModel, WithStartRow
             'kecamatan' => $row[3],
             'desa_kelurahan' => $row[4],
             'alamat' => $row[5],
-            'nmpendamping_lama' => $row[6],
-            'nmpendamping_baru' => $row[7],
-            'dusun' => $row[8],
-            'rt' => $row[9],
-            'rw' => $row[10],
+            'nik_pendamping' => $row[6],
+            'dusun' => $row[7],
+            'rt' => $row[8],
+            'rw' => $row[9],
         ]);
     }
 }

@@ -38,6 +38,6 @@ mix.css('public/assets/vendor/bootstrap/css/bootstrap.min.css', 'public/css/app.
 // mix.css('public/assets/vendor/boxicons/css/boxicons.min.css', 'public/css/app.css');
 // mix.css('public/assets/vendor/quill/quill.snow.css', 'public/css/app.css');
 // mix.css('public/assets/vendor/quill/quill.bubble.css', 'public/css/app.css');
-// mix.css('public/assets/vendor/remixicon/remixicon.css', 'public/css/app.css');
+mix.css('public/assets/vendor/remixicon/remixicon.css', 'public/css/app.css');
 mix.css('public/assets/css/style.css', 'public/css/app.css');
 mix.css('node_modules/datatables.net-dt/css/jquery.dataTables.css', 'public/css/app.css');

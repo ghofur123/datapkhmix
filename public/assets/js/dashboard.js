@@ -35,12 +35,15 @@ $(document).on('click', '.button-form', function () { // memanggil form
     if (typeForm == "form-excel") {
         submitUploadExcel('data-kpm', 'data-kpm');
         submitUploadExcel('sppd', 'sppd');
+        submitUploadExcel('rekening-excel', 'rekening-import');
+        submitUploadExcel('pendamping', 'pendamping');
     } else if (typeForm == "form-text") {
         submitFormText('jenis-gambar', 'jenis-gambar');
         submitFormText('penyalur-form', 'penyalur');
         submitFormText('jenis-bantuan', 'jenis-bantuan');
         submitFormText('jenis-pelaporan', 'jenis-pelaporan');
         submitFormText('status-pelaporan', 'status-pelaporan');
+        submitFormText('rekening', 'rekening');
     }
 });
 
@@ -56,6 +59,7 @@ $(document).on('click', '.btn-edit-class', function () {
         submitFormPut('penyalur-update', 'penyalur');
         submitFormPut('jenis-pelaporan-update', 'jenis-pelaporan');
         submitFormPut('status-pelaporan-update', 'status-pelaporan');
+        submitFormPut('rekening-update', 'rekening');
     });
 });
 // click foto

@@ -35,6 +35,8 @@ class SppdController extends Controller
         $file->move('public/excel', $fileName);
         // import excel to mysql
         Excel::import(new SppdImport, public_path('../public/excel/' . $fileName));
+        // mmberi delay
+        sleep(5);
         // delete file
         unlink('public/excel/' . $fileName);
         return response([

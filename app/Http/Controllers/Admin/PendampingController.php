@@ -3,24 +3,24 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Imports\DataKpmImport;
-use App\Models\DataKpm;
+use App\Imports\PendampingImport;
+use App\Models\Pendamping;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
-use Illuminate\Support\Facades\File;
+use Maatwebsite\Excel\Events\AfterImport;
 
-class DataKpmController extends Controller
+class PendampingController extends Controller
 {
     public function index()
     {
         $data = array(
-            'namePage' => "Data KPM ( Keluaga Penerima Manfaat )",
+            'namePage' => "Pendamping",
             'breadcrumb_1' => "dashboard",
-            "breadcrumb_2" => "data kpm",
+            "breadcrumb_2" => "Pendamping",
             "breadcrumb_3" => "tabel",
-            "data" => DataKpm::orderBy('nik', 'ASC')->get()
+            "data" => Pendamping::orderBy('nama', 'ASC')->get()
         );
-        return view('admin.pages.kpm.data', $data);
+        return view('admin.pages.pendamping.table', $data);
     }
     public function store(Request $request)
     {
@@ -30,7 +30,7 @@ class DataKpmController extends Controller
         // upload file
         $file->move('public/excel', $fileName);
         // import excel to mysql
-        Excel::import(new DataKpmImport, public_path('../public/excel/' . $fileName));
+        Excel::import(new PendampingImport, public_path('../public/excel/' . $fileName));
         // mmberi delay
         sleep(5);
         // delete file
@@ -38,6 +38,16 @@ class DataKpmController extends Controller
         return response([
             'success' => true,
             'message' => 'upload data success'
+        ]);
+    }
+    public function destroy(Request $request)
+    {
+        Pendamping::where([
+            'id' => $request->id
+        ])->delete();
+        return response([
+            'success' => false,
+            'message' => 'success'
         ]);
     }
 }

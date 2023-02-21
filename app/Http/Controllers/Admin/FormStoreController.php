@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Penyalur;
 use Illuminate\Http\Request;
 
 class FormStoreController extends Controller
@@ -84,5 +85,36 @@ class FormStoreController extends Controller
             "breadcrumb_3" => "form",
         );
         return view('admin.pages.status_pelaporan.store', $data);
+    }
+    public function rekening()
+    {
+        $data = array(
+            'namePage' => "Rekening",
+            'breadcrumb_1' => "dashboard",
+            "breadcrumb_2" => "Rekening",
+            "breadcrumb_3" => "form",
+            'penyalur' => Penyalur::orderBy('nama_penyalur', 'ASC')->get()
+        );
+        return view('admin.pages.rekening.store', $data);
+    }
+    public function rekeningUploadExcel()
+    {
+        $data = array(
+            'namePage' => "Rekening",
+            'breadcrumb_1' => "dashboard",
+            "breadcrumb_2" => "Rekening",
+            "breadcrumb_3" => "form upload excel",
+        );
+        return view('admin.pages.rekening.form_upload', $data);
+    }
+    public function pendampingUploadExcel()
+    {
+        $data = array(
+            'namePage' => "Pendamping",
+            'breadcrumb_1' => "dashboard",
+            "breadcrumb_2" => "pendamping",
+            "breadcrumb_3" => "form upload excel",
+        );
+        return view('admin.pages.pendamping.form_upload', $data);
     }
 }

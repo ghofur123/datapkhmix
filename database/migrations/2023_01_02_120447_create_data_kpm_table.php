@@ -20,8 +20,7 @@ class CreateDataKpmTable extends Migration
             $table->string('kecamatan')->nullable();
             $table->string('desa_kelurahan')->nullable();
             $table->text('alamat')->nullable();
-            $table->string('nmpendamping_lama')->nullable();
-            $table->string('nmpendamping_baru')->nullable();
+            $table->string('nik_pendamping')->nullable();
             $table->string('dusun')->nullable();
             $table->integer('rt')->nullable();
             $table->integer('rw')->nullable();

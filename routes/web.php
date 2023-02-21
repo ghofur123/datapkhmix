@@ -13,6 +13,12 @@ use App\Http\Controllers\Admin\GambarController;
 use App\Http\Controllers\Admin\StorageImagesController;
 use App\Http\Controllers\Admin\JenisPelaporanController;
 use App\Http\Controllers\Admin\StatusPelaporanController;
+use App\Http\Controllers\Admin\RekeningController;
+use App\Http\Controllers\Admin\RekeningImportController;
+use App\Http\Controllers\Admin\WilayahController;
+use App\Http\Controllers\Admin\PendampingController;
+use App\Http\Controllers\Admin\PelaporanController;
+use App\Http\Controllers\Admin\PraktekController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -68,6 +74,23 @@ Route::post('/status-pelaporan', [StatusPelaporanController::class, 'store']);
 Route::put('/status-pelaporan', [StatusPelaporanController::class, 'update']);
 Route::delete('/status-pelaporan', [StatusPelaporanController::class, 'destroy']);
 // 
+Route::get('/rekening', [RekeningController::class, 'index']);
+Route::get('/rekening/{id}', [RekeningController::class, 'show']);
+Route::post('/rekening', [RekeningController::class, 'store']);
+Route::put('/rekening', [RekeningController::class, 'update']);
+Route::delete('/rekening', [RekeningController::class, 'destroy']);
+Route::post('/rekening-import', [RekeningImportController::class, 'import']);
+// 
+Route::get('/provinces', [WilayahController::class, 'provinces']);
+Route::get('/regencies/{id}', [WilayahController::class, 'regencies']);
+Route::get('/districts/{id}', [WilayahController::class, 'districts']);
+// 
+Route::get('/pendamping', [PendampingController::class, 'index']);
+Route::post('/pendamping', [PendampingController::class, 'store']);
+Route::delete('/pendamping', [PendampingController::class, 'destroy']);
+// 
+Route::get('/pelaporan', [PelaporanController::class, 'index']);
+// 
 Route::get('/data-kpm-form-exel', [FormStoreController::class, 'DataKpmUploadExel']);
 Route::get('/sppd-form-exel', [FormStoreController::class, 'SppdUploadExcel']);
 Route::get('/form-jenis-gambar', [FormStoreController::class, 'jenisGambar']);
@@ -77,6 +100,9 @@ Route::get('/form-jenis-bantuan', [FormStoreController::class, 'jenisBantuan']);
 Route::get('/form-upload-image/{nik}/{jenisGambar}', [FormStoreController::class, 'uploadImage']);
 Route::get('/form-jenis-pelaporan', [FormStoreController::class, 'jenisPelaporan']);
 Route::get('/form-status-pelaporan', [FormStoreController::class, 'statusPelaporan']);
+Route::get('/form-rekening', [FormStoreController::class, 'rekening']);
+Route::get('/form-rekening-excel', [FormStoreController::class, 'rekeningUploadExcel']);
+Route::get('/form-pendamping-excel', [FormStoreController::class, 'pendampingUploadExcel']);
 //
 Route::get('/storage-images', [StorageImagesController::class, 'index']);
 // 

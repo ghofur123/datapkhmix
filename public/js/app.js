@@ -2107,12 +2107,15 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('click', '.button-for
   if (typeForm == "form-excel") {
     (0,_modul_upload_excel_js__WEBPACK_IMPORTED_MODULE_2__.submitUploadExcel)('data-kpm', 'data-kpm');
     (0,_modul_upload_excel_js__WEBPACK_IMPORTED_MODULE_2__.submitUploadExcel)('sppd', 'sppd');
+    (0,_modul_upload_excel_js__WEBPACK_IMPORTED_MODULE_2__.submitUploadExcel)('rekening-excel', 'rekening-import');
+    (0,_modul_upload_excel_js__WEBPACK_IMPORTED_MODULE_2__.submitUploadExcel)('pendamping', 'pendamping');
   } else if (typeForm == "form-text") {
     (0,_modul_form_text_js__WEBPACK_IMPORTED_MODULE_3__.submitFormText)('jenis-gambar', 'jenis-gambar');
     (0,_modul_form_text_js__WEBPACK_IMPORTED_MODULE_3__.submitFormText)('penyalur-form', 'penyalur');
     (0,_modul_form_text_js__WEBPACK_IMPORTED_MODULE_3__.submitFormText)('jenis-bantuan', 'jenis-bantuan');
     (0,_modul_form_text_js__WEBPACK_IMPORTED_MODULE_3__.submitFormText)('jenis-pelaporan', 'jenis-pelaporan');
     (0,_modul_form_text_js__WEBPACK_IMPORTED_MODULE_3__.submitFormText)('status-pelaporan', 'status-pelaporan');
+    (0,_modul_form_text_js__WEBPACK_IMPORTED_MODULE_3__.submitFormText)('rekening', 'rekening');
   }
 });
 
@@ -2128,6 +2131,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('click', '.btn-edit-c
     (0,_modul_form_put_js__WEBPACK_IMPORTED_MODULE_4__.submitFormPut)('penyalur-update', 'penyalur');
     (0,_modul_form_put_js__WEBPACK_IMPORTED_MODULE_4__.submitFormPut)('jenis-pelaporan-update', 'jenis-pelaporan');
     (0,_modul_form_put_js__WEBPACK_IMPORTED_MODULE_4__.submitFormPut)('status-pelaporan-update', 'status-pelaporan');
+    (0,_modul_form_put_js__WEBPACK_IMPORTED_MODULE_4__.submitFormPut)('rekening-update', 'rekening');
   });
 });
 // click foto
@@ -2482,7 +2486,6 @@ function buttonDelete(name, callback) {
     e.preventDefault();
     var id = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('data');
     var link = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('data1');
-    console.log(link);
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('.class-progres-view').show();
     jquery__WEBPACK_IMPORTED_MODULE_0___default().ajax({
       headers: {
@@ -2495,7 +2498,6 @@ function buttonDelete(name, callback) {
       },
       success: function success(data) {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()('.class-progres-view').hide();
-        console.log(callback);
         if (callback && typeof callback === "function") {
           callback();
         } else {
@@ -60353,6 +60355,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./public/assets/vendor/remixicon/remixicon.css":
+/*!******************************************************!*\
+  !*** ./public/assets/vendor/remixicon/remixicon.css ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./public/assets/css/style.css":
 /*!*************************************!*\
   !*** ./public/assets/css/style.css ***!
@@ -76386,6 +76401,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./public/assets/js/dashboard.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/css/app.css")))
 /******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./public/assets/vendor/bootstrap/css/bootstrap.min.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./public/assets/vendor/remixicon/remixicon.css")))
 /******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./public/assets/css/style.css")))
 /******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./node_modules/datatables.net-dt/css/jquery.dataTables.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
